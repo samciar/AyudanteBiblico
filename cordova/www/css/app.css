@@ -1,0 +1,168 @@
+/* Your app custom styles here */
+
+:root {
+    --f7-panel-width: 95%;
+    --f7-grid-gap: 16px;
+    --f7-button-border-radius: 3px;
+}
+
+.grid-min-gap{
+    gap: 3px;
+}
+
+.block-book-list .grid{
+    margin-bottom: 3px; 
+}
+
+.block-book-list .button{
+    color: white;
+    background-color: #004559;
+    border-radius: 0;
+    display: inline-block;
+    font-weight: 400;
+    overflow: hidden !important;
+    position: relative;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.block-book-list .button::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.block-book-list .button.bt-tone-1::after{
+    opacity: 0.3;
+}
+
+.block-book-list .button.bt-tone-2::after{
+    opacity: 0.1;
+}
+
+.block-book-list .button.bt-tone-3::after{
+    opacity: 0;
+}
+
+.block-book-list .button.bt-tone-4::after{
+    opacity: 0;
+}
+
+.chapters-box .btn-chapter{
+    border-radius: 0;
+    background-color: #004559;
+    color: white;
+}
+
+.file-content-view{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.file-content-view p {
+    margin: 0;
+}
+
+.file-content-view>p:first-child .w_ch strong{
+    color: #0096c1;
+    display: inline-block;
+    font-size: 2em;
+    height: 34px;
+    margin-right: 5px;
+}
+
+.file-content-view p sup{
+    color: #0096c1;
+    font-size: 1.1em;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+}
+
+.highlighted-verse{
+    color: #6cdeff;
+}
+
+.topic-content{
+    /* font-size: 16px; */
+}
+
+.topic-content .sub-topic{
+    padding-inline-start: 21px;
+}
+
+.topic-content .sub-topic>li{
+    font-weight: 500;
+}
+
+.topic-content .sub-topic-points{
+    padding-inline-start: 15px;
+}
+
+.topic-content .sub-topic-points>li{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.topic-content .sub-topic-points>li:first-child{
+    margin-top: 15px;
+}
+
+.topic-content .sub-topic-points .sub-topic-texts{
+    margin-top: 5px;
+}
+
+.topic-content .sub-topic-points .sub-topic-texts a{
+
+}
+
+.front-bible-image img{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.coverTtl{
+    text-align: center;
+}
+
+.text-no-bookmarks,
+.text-search-no-found{
+    display: none;
+}
+
+html:not(.dark) .highlighted-verse{
+    color: #3078c5
+}
+
+.img-book-reading{
+    background-image: url(../img/book_reading.jpg);
+    position: relative;
+    width: 70%;
+    height: 230px;
+    margin: 120px auto 0 auto;
+    background-size: 100% auto;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.jw-ext-link{
+    cursor: pointer;
+}
+
+.jw-ext-link img{
+    width: 100%;
+    height: auto;
+}
+
+.jw-ext-link p{
+    font-size: 0.7rem;
+    margin-top: 0;
+}

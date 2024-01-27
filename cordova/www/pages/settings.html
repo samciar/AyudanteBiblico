@@ -1,0 +1,102 @@
+<template>
+  <div class="page" data-name="settings">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="title">Settings</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block-title">Ajustes de lectura</div>
+      <div class="list list-strong-ios list-dividers-ios list-outline-ios">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title">Modo oscuro</div>
+                <div class="item-after">
+                  <label class="toggle toggle-init">
+                    <input type="checkbox" class="config-darkmode" checked/>
+                    <span class="toggle-icon"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Tamaño de texto</div>
+                <div class="item-input-wrap">
+                  <div class="range-slider range-slider-init" data-label="true">
+                    <input class="range-font-size" type="range" value="16" min="12" max="28" step="1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="block-title">Otros</div>
+      <div class="list list-strong inset list-dividers-ios">
+        <ul>
+          <li>
+            <a href="/about/" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">Sobre Temas para el ministerio</div>
+              </div>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="/thanks/" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">Agradecimientos</div>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default (props, { $store }) => {
+    const config = $store.getters.config;
+
+    // console.log(config.value.theme);
+
+    $("body").on("change", ".range-font-size", function(e){
+        let fontSize = parseInt($(this).val());
+        
+        $store.dispatch('updateConfig', ["fontSize", fontSize]).then(()=>{          
+          $(".file-content-view").css("font-size", fontSize+"px");
+          $("#view-topics").css("font-size", fontSize+"px");
+
+          //update config file
+          LOCAL_SOURCES.updateConfigFile(null, 1);
+
+        });
+
+    });
+
+    $("body").on("change", ".config-darkmode", function(e){
+
+      let newValue = $(this).prop("checked");
+
+      app.setDarkMode(newValue);
+
+      let value = (newValue) ? 'dark' : 'light';
+
+      $store.dispatch('updateConfig', ["theme", value]).then(()=>{          
+          
+          //update config file
+          LOCAL_SOURCES.updateConfigFile(null, 1);
+        });
+
+    });
+
+    return $render;
+  }
+
+</script>

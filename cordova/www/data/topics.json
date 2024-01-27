@@ -1,0 +1,554 @@
+[
+    {
+        "topic": "Adoración de antepasados",
+        "subTopics":
+        [
+            {
+                "title": "Adoración de antepasados, o antecesores, es en vano",
+                "points":
+                [
+                    {
+                        "description": "Antepasados están muertos, inconscientes.",
+                        "texts": 
+                        [
+                            {
+                                "book": 21,
+                                "chapter": 9,
+                                "verses": 5,
+                                "type": 1
+                            },
+                            {
+                                "book": 21,
+                                "chapter": 9,
+                                "verses": 10,
+                                "type": 2
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Antepasados originales no son dignos de adoración.",
+                        "texts": 
+                        [
+                            {
+                                "book": 45,
+                                "chapter": 5,
+                                "verses": 12,
+                                "type": 1
+                            },
+                            {
+                                "book": 45,
+                                "chapter": 5,
+                                "verses": 14,
+                                "type": 2
+                            },
+                            {
+                                "book": 54,
+                                "chapter": 2,
+                                "verses": 14,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Dios prohibe tal adoración.",
+                        "texts": 
+                        [
+                            {
+                                "book": 2,
+                                "chapter": 34,
+                                "verses": 14,
+                                "type": 0
+                            },
+                            {
+                                "book": 40,
+                                "chapter": 4,
+                                "verses": 10,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "A los hombres se les puede honrar, pero solo a Dios adorar",
+                "points": 
+                [
+                    {
+                        "description": "Jóvenes deben honrar a mayores.",
+                        "texts":
+                        [
+                            {
+                                "book": 54,
+                                "chapter": 5,
+                                "verses": "1-2",
+                                "type": 1
+                            },
+                            {
+                                "book": 54,
+                                "chapter": 5,
+                                "verses": 17,
+                                "type": 2
+                            },
+                            {
+                                "book": 49,
+                                "chapter": 6,
+                                "verses": "1-3",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Solo Dios debe ser adorado.",
+                        "texts":
+                        [
+                            {
+                                "book": 44,
+                                "chapter": 10,
+                                "verses": "25-26",
+                                "type": 0
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 22,
+                                "verses": "8-9",
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "topic": "Adoración de María",
+        "subTopics":
+        [
+            {
+                "title": "María madre de Jesús, no \"madre de Dios\"",
+                "points":
+                [
+                    {
+                        "description": "Dios no tuvo principio.",
+                        "texts":
+                        [
+                            {
+                                "book": 19,
+                                "chapter": 90,
+                                "verses": 2,
+                                "type": 0
+                            },
+                            {
+                                "book": 54,
+                                "chapter": 1,
+                                "verses": 17,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "María fue madre del Hijo de Dios, en condición terrestre.",
+                        "texts":
+                        [
+                            {
+                                "book": 42,
+                                "chapter": 1,
+                                "verses": 35,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "María no fue \"siempre virgen\"",
+                "points":
+                [
+                    {
+                        "description": "Se casó con José.",
+                        "texts":
+                        [
+                            {
+                                "book": 40,
+                                "chapter": 1,
+                                "verses": "19-20",
+                                "type": 1
+                            },
+                            {
+                                "book": 40,
+                                "chapter": 1,
+                                "verses": "24-25",
+                                "type": 2
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tuvo otros hijos además de Jesús.",
+                        "texts":
+                        [
+                            {
+                                "book": 40,
+                                "chapter": 13,
+                                "verses": "55-56",
+                                "type": 0
+                            },
+                            {
+                                "book": 42,
+                                "chapter": 8,
+                                "verses": "19-21",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Éstos no eran entonces \"hermanos espirituales\" de Jesús.",
+                        "texts":
+                        [
+                            {
+                                "book": 43,
+                                "chapter": 7,
+                                "verses": 3,
+                                "type": 1
+                            },
+                            {
+                                "book": 43,
+                                "chapter": 7,
+                                "verses": 5,
+                                "type": 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "topic": "Vida",
+        "subTopics":
+        [
+            {
+                "title": "Se asegura vida eterna para la humanidad obediente",
+                "points":
+                [
+                    {
+                        "description": "Dios, que no puede mentir, ha prometido vida.",
+                        "texts":
+                        [
+                            {
+                                "book": 56,
+                                "chapter": 1,
+                                "verses": 2,
+                                "type": 0
+                            },
+                            {
+                                "book": 43,
+                                "chapter": 10,
+                                "verses": "27-28",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Se asegura vida eterna a los que ejercen fe.",
+                        "texts":
+                        [
+                            {
+                                "book": 43,
+                                "chapter": 11,
+                                "verses": "25-26",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "La muerte será destruida.",
+                        "texts":
+                        [
+                            {
+                                "book": 46,
+                                "chapter": 15,
+                                "verses": 26,
+                                "type": 0
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 21,
+                                "verses": 4,
+                                "type": 0
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 20,
+                                "verses": 14,
+                                "type": 0
+                            },
+                            {
+                                "book": 23,
+                                "chapter": 25,
+                                "verses": 8,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Vida celestial se limita a los que forman el cuerpo de Cristo",
+                "points":
+                [
+                    {
+                        "description": "Dios selecciona miembros según le place.",
+                        "texts":
+                        [
+                            {
+                                "book": 40,
+                                "chapter": 20,
+                                "verses": 23,
+                                "type": 0
+                            },
+                            {
+                                "book": 46,
+                                "chapter": 12,
+                                "verses": 18,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Solo 144.000 tomados de la tierra.",
+                        "texts":
+                        [
+                            {
+                                "book": 66,
+                                "chapter": 14,
+                                "verses": 1,
+                                "type": 1
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 14,
+                                "verses": 4,
+                                "type": 2
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 7,
+                                "verses": "2-4",
+                                "type": 0
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 5,
+                                "verses": "9-10",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ni aun Juan el Bautizante estará en el Reino Celestial.",
+                        "texts":
+                        [
+                            {
+                                "book": 40,
+                                "chapter": 11,
+                                "verses": 11,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Se promete vida terrestre a un número ilimitado, \"otras ovejas\"",
+                "points":
+                [
+                    {
+                        "description": "\"Otras ovejas\" no son los hermanos de Cristo.",
+                        "texts":
+                        [
+                            {
+                                "book": 43,
+                                "chapter": 10,
+                                "verses": 16,
+                                "type": 0
+                            },
+                            {
+                                "book": 40,
+                                "chapter": 25,
+                                "verses": 32,
+                                "type": 1
+                            },
+                            {
+                                "book": 40,
+                                "chapter": 25,
+                                "verses": 40,
+                                "type": 2
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Se junta a muchos ahora para sobrevivir en la tierra.",
+                        "texts":
+                        [
+                            {
+                                "book": 66,
+                                "chapter": 7,
+                                "verses": 9,
+                                "type": 1
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 7,
+                                "verses": "15-17",
+                                "type": 2
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Otros serán resucitados para vida en la tierra.",
+                        "texts":
+                        [
+                            {
+                                "book": 66,
+                                "chapter": 20,
+                                "verses": 12,
+                                "type": 0
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 21,
+                                "verses": 4,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "topic": "Vuelta de Cristo",
+        "subTopics":
+        [
+            {
+                "title": "Vuelta será invisible a los seres humanos",
+                "points":
+                [
+                    {
+                        "description": "Les dijo a discípulos que el mundo no lo vería mas.",
+                        "texts":
+                        [
+                            {
+                                "book": 43,
+                                "chapter": 14,
+                                "verses": 19,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Solo los discípulos vieron el ascenso; su vuelta es similar.",
+                        "texts":
+                        [
+                            {
+                                "book": 44,
+                                "chapter": 1,
+                                "verses": 6,
+                                "type": 1
+                            },
+                            {
+                                "book": 44,
+                                "chapter": 1,
+                                "verses": "10-11",
+                                "type": 2
+                            }
+                        ]
+                    },
+                    {
+                        "description": "En el cielo, un espíritu invisible.",
+                        "texts":
+                        [
+                            {
+                                "book": 54,
+                                "chapter": 6,
+                                "verses": "14-16",
+                                "type": 0
+                            },
+                            {
+                                "book": 58,
+                                "chapter": 1,
+                                "verses": 3,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Vuelve en poder del Reino celestial.",
+                        "texts":
+                        [
+                            {
+                                "book": 27,
+                                "chapter": 7,
+                                "verses": "13-14",
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Reconocida por hechos físicos",
+                "points":
+                [
+                    {
+                        "description": "Discípulos pidieron señal de la presencia.",
+                        "texts":
+                        [
+                            {
+                                "book": 40,
+                                "chapter": 24,
+                                "verses": 3,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Cristianos \"ven\" la presencia mediante entendimiento.",
+                        "texts":
+                        [
+                            {
+                                "book": 49,
+                                "chapter": 1,
+                                "verses": 18,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Muchos sucesos forman evidencia de la presencia.",
+                        "texts":
+                        [
+                            {
+                                "book": 42,
+                                "chapter": 21,
+                                "verses": "10-11",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Enemigos \"ven\" al sobrevenirles la destrucción.",
+                        "texts":
+                        [
+                            {
+                                "book": 66,
+                                "chapter": 1,
+                                "verses": 7,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

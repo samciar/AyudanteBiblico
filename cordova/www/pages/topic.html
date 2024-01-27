@@ -1,0 +1,100 @@
+<template>
+  <div class="page" data-name="topic">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="if-not-md">Back</span>
+          </a>
+        </div>
+        <div class="title">${currentTopic.topic}</div> <!--${currentTopic.topic}-->
+      </div>
+    </div>
+    <div class="page-content">
+      <!-- <div class="block-title">Sobre ${currentTopic.topic}</div> -->
+      <div class="block topic-content"> <!-- innerHTML=${contentTopic} -->
+        
+        <ol class="sub-topic" type="A">
+
+          ${currentTopic.subTopics.map((subTopic) => $h`
+            <li>
+              ${subTopic.title}
+              <ul class="sub-topic-points">
+              ${subTopic.points.map((point) => $h`
+                <li>
+                  ${point.description}
+                  <p class="sub-topic-texts" innerHTML="${buildTexts(point.texts)}">
+                    <!-- Dinamic content load -->
+                  </p>
+                </li>
+              `)}
+              </ul>
+            </li>
+          `)}
+
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default (props, { $f7route, $store }) => {
+    const topics = $store.getters.topics;
+    const config = $store.getters.config;
+    let fontSizeConfig = config.value.fontSize.value;
+
+    const indexTopic = parseInt($f7route.params.index);
+    let currentTopic = topics.value[indexTopic];
+    let contentTopic = "";
+
+    function buildTexts(texts){
+      let htmlTextsGroup = "";
+
+      texts.forEach((text, index) => {
+        let textDeep = {...text};
+        let groupVerseText = "";
+        if(typeof text.verses == "string"){
+          groupVerseText = text.verses;
+
+          //validate if group is composed by twice consecutive verses.
+          groupVerseArr = groupVerseText.split("-").map( Number );
+          if((groupVerseArr[0] + 1) == groupVerseArr[1]){
+            groupVerseText = `${groupVerseArr[0]}, ${groupVerseArr[1]}`;
+          }
+
+          textDeep.verses = `"${textDeep.verses}"`;
+        }else{
+          groupVerseText = textDeep.verses;
+        }
+
+        if(textDeep.type === 0){
+          htmlTextsGroup += `<a href="#" data-verse='{"book": ${textDeep.book}, "chapter": ${textDeep.chapter}, "verse": ${textDeep.verses}}'>
+                              ${store.getters.books.value[(textDeep.book - 1)].abbr} ${textDeep.chapter}:${groupVerseText}</a>;${" "}`;
+        }
+        if(textDeep.type === 1){
+          htmlTextsGroup += `<a href="#" data-verse='{"book": ${textDeep.book}, "chapter": ${textDeep.chapter}, "verse": ${textDeep.verses}}'>
+                              ${store.getters.books.value[(textDeep.book - 1)].abbr} ${textDeep.chapter}:${groupVerseText}</a>, `;
+        }
+        if(textDeep.type === 2){
+          htmlTextsGroup += `<a href="#" data-verse='{"book": ${textDeep.book}, "chapter": ${textDeep.chapter}, "verse": ${textDeep.verses}}'>
+                              ${groupVerseText}</a>;${" "}`;
+        }
+
+        //Remove las ; and whitespace from string html
+        if(texts.length == (index+1)){
+          htmlTextsGroup = htmlTextsGroup.slice(0, -2);
+        }
+
+      });
+
+      return htmlTextsGroup;
+    }
+
+    $("#view-topics").css("font-size", `${fontSizeConfig}px`);
+
+    return $render;
+  };
+</script>

@@ -35,10 +35,11 @@ node_modules/
 Thumbs.db
 
 # Cordova
-cordova/platforms/
-cordova/plugins/
-cordova/www/
+#cordova/platforms/
+#cordova/plugins/
+#cordova/www/
 
-
+#Readme framework7
+README.md
 
 

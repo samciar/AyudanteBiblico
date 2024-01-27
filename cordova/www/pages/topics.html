@@ -1,0 +1,63 @@
+<template>
+  <div class="page" data-name="topics">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner">
+        <div class="title sliding">Temas Bíblicos</div>
+        <div class="right">
+          <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-topic">
+            <i class="icon f7-icons if-not-md">search</i>
+            <i class="icon material-icons md-only">search</i>
+          </a>
+        </div>
+        <form class="searchbar searchbar-expandable searchbar-topic searchbar-init" data-search-container=".search-list" data-search-in=".item-title">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input type="search" placeholder="Search" />
+              <i class="searchbar-icon"></i>
+              <span class="input-clear-button"></span>
+            </div>
+            <span class="searchbar-disable-button">Cancel</span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="searchbar-backdrop"></div>
+      <div class="list list-strong-ios list-outline-ios list-dividers-ios simple-list searchbar-not-found">
+        <ul>
+          <li>Sin resultado de busqueda</li>
+        </ul>
+      </div>
+      <div class="list list-strong list-dividers-ios list-outline-ios inset-md search-list searchbar-found">
+        <ul>
+          ${topics.value.map((topic, index) => $h`
+            <li>
+              <a class="item-content item-link" href="/topic/${index}/">
+                <div class="item-inner">
+                  <div class="item-title">${topic.topic}</div>
+                </div>
+              </a>
+            </li>
+          `)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default (props, { $store }) => {
+    const topics = $store.getters.topics;
+
+    // const addTopic = () => {
+    //   $store.dispatch('addTopic', {
+    //     id: '4',
+    //     title: 'Apple iPhone 12',
+    //     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis.'
+    //   });
+    // }
+
+    return $render;
+  }
+
+</script>
