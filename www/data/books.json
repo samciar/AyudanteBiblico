@@ -1,0 +1,464 @@
+[
+    {
+      "id": 1,
+      "title": "Génesis",
+      "abbr": "Gén.",
+      "tone": "4",
+      "chapters": 50
+    },
+    {
+      "id": 2,
+      "title": "Éxodo",
+      "abbr": "Éx.",
+      "tone": "4",
+      "chapters": 40
+    },
+    {
+      "id": 3,
+      "title": "Levítico",
+      "abbr": "Lev.",
+      "tone": "4",
+      "chapters": 27
+    },
+    {
+      "id": 4,
+      "title": "Números",
+      "abbr": "Núm.",
+      "tone": "4",
+      "chapters": 36
+    },
+    {
+      "id": 5,
+      "title": "Deuteronomio",
+      "abbr": "Deut.",
+      "tone": "4",
+      "chapters": 34
+    },
+    {
+      "id": 6,
+      "title": "Josúe",
+      "abbr": "Jos.",
+      "tone": "1",
+      "chapters": 24
+    },
+    {
+      "id": 7,
+      "title": "Jueces",
+      "abbr": "Juec.",
+      "tone": "1",
+      "chapters": 21
+    },
+    {
+      "id": 8,
+      "title": "Rut",
+      "abbr": "Rut",
+      "tone": "1",
+      "chapters": 4
+    },
+    {
+      "id": 9,
+      "title": "1 Samuel",
+      "abbr": "1 Sam.",
+      "tone": "1",
+      "chapters": 31
+    },
+    {
+      "id": 10,
+      "title": "2 Samuel",
+      "abbr": "2 Sam.",
+      "tone": "1",
+      "chapters": 24
+    },
+    {
+      "id": 11,
+      "title": "1 Reyes",
+      "abbr": "1 Rey.",
+      "tone": "1",
+      "chapters": 22
+    },
+    {
+      "id": 12,
+      "title": "2 Reyes",
+      "abbr": "2 Rey.",
+      "tone": "1",
+      "chapters": 25
+    },
+    {
+      "id": 13,
+      "title": "1 Crónicas",
+      "abbr": "1 Crón.",
+      "tone": "1",
+      "chapters": 29
+    },
+    {
+      "id": 14,
+      "title": "2 Crónicas",
+      "abbr": "2 Crón.",
+      "tone": "1",
+      "chapters": 36
+    },
+    {
+      "id": 15,
+      "title": "Esdras",
+      "abbr": "Esd.",
+      "tone": "1",
+      "chapters": 10
+    },
+    {
+      "id": 16,
+      "title": "Nehemías",
+      "abbr": "Neh.",
+      "tone": "1",
+      "chapters": 13
+    },
+    {
+      "id": 17,
+      "title": "Ester",
+      "abbr": "Est.",
+      "tone": "1",
+      "chapters": 10
+    },
+    {
+      "id": 18,
+      "title": "Job",
+      "abbr": "Job",
+      "tone": "2",
+      "chapters": 42
+    },
+    {
+      "id": 19,
+      "title": "Salmos",
+      "abbr": "Sal.",
+      "tone": "2",
+      "chapters": 150
+    },
+    {
+      "id": 20,
+      "title": "Proverbios",
+      "abbr": "Prov.",
+      "tone": "2",
+      "chapters": 31
+    },
+    {
+      "id": 21,
+      "title": "Eclesiastés",
+      "abbr": "Ecl.",
+      "tone": "2",
+      "chapters": 12
+    },
+    {
+      "id": 22,
+      "title": "El Cantar de los Cantares",
+      "abbr": "Cant.",
+      "tone": "2",
+      "chapters": 8
+    },
+    {
+      "id": 23,
+      "title": "Isaías",
+      "abbr": "Is.",
+      "tone": "3",
+      "chapters": 66
+    },
+    {
+      "id": 24,
+      "title": "Jeremías",
+      "abbr": "Jer.",
+      "tone": "3",
+      "chapters": 52
+    },
+    {
+      "id": 25,
+      "title": "Lamentaciones",
+      "abbr": "Lam.",
+      "tone": "3",
+      "chapters": 5
+    },
+    {
+      "id": 26,
+      "title": "Ezequiel",
+      "abbr": "Ezeq.",
+      "tone": "3",
+      "chapters": 48
+    },
+    {
+      "id": 27,
+      "title": "Daniel",
+      "abbr": "Dan.",
+      "tone": "3",
+      "chapters": 12
+    },
+    {
+      "id": 28,
+      "title": "Oseas",
+      "abbr": "Os.",
+      "tone": "3",
+      "chapters": 14
+    },
+    {
+      "id": 29,
+      "title": "Joel",
+      "abbr": "Joel",
+      "tone": "3",
+      "chapters": 3
+    },
+    {
+      "id": 30,
+      "title": "Amós",
+      "abbr": "Amós",
+      "tone": "3",
+      "chapters": 9
+    },
+    {
+      "id": 31,
+      "title": "Abdías",
+      "abbr": "Abd.",
+      "tone": "3",
+      "chapters": 1
+    },
+    {
+      "id": 32,
+      "title": "Jonás",
+      "abbr": "Jon.",
+      "tone": "3",
+      "chapters": 4
+    },
+    {
+      "id": 33,
+      "title": "Miqueas",
+      "abbr": "Miq.",
+      "tone": "3",
+      "chapters": 7
+    },
+    {
+      "id": 34,
+      "title": "Nahúm",
+      "abbr": "Nah.",
+      "tone": "3",
+      "chapters": 3
+    },
+    {
+      "id": 35,
+      "title": "Habacuc",
+      "abbr": "Hab.",
+      "tone": "3",
+      "chapters": 3
+    },
+    {
+      "id": 36,
+      "title": "Sofonías",
+      "abbr": "Sof.",
+      "tone": "3",
+      "chapters": 3
+    },
+    {
+      "id": 37,
+      "title": "Ageo",
+      "abbr": "Ageo",
+      "tone": "3",
+      "chapters": 2
+    },
+    {
+      "id": 38,
+      "title": "Zacarías",
+      "abbr": "Zac.",
+      "tone": "3",
+      "chapters": 14
+    },
+    {
+      "id": 39,
+      "title": "Malaquías",
+      "abbr": "Mal.",
+      "tone": "3",
+      "chapters": 4
+    },
+    {
+      "id": 40,
+      "title": "Mateo",
+      "abbr": "Mat.",
+      "tone": "4",
+      "chapters": 28
+    },
+    {
+      "id": 41,
+      "title": "Marcos",
+      "abbr": "Mar.",
+      "tone": "4",
+      "chapters": 16
+    },
+    {
+      "id": 42,
+      "title": "Lucas",
+      "abbr": "Luc.",
+      "tone": "4",
+      "chapters": 24
+    },
+    {
+      "id": 43,
+      "title": "Juan",
+      "abbr": "Juan",
+      "tone": "4",
+      "chapters": 21
+    },
+    {
+      "id": 44,
+      "title": "Hechos",
+      "abbr": "Hech.",
+      "tone": "1",
+      "chapters": 28
+    },
+    {
+      "id": 45,
+      "title": "Romanos",
+      "abbr": "Rom.",
+      "tone": "2",
+      "chapters": 16
+    },
+    {
+      "id": 46,
+      "title": "1 Corintios",
+      "abbr": "1 Cor.",
+      "tone": "2",
+      "chapters": 16
+    },
+    {
+      "id": 47,
+      "title": "2 Corintios",
+      "abbr": "2 Cor.",
+      "tone": "2",
+      "chapters": 13
+    },
+    {
+      "id": 48,
+      "title": "Gálatas",
+      "abbr": "Gál.",
+      "tone": "2",
+      "chapters": 6
+    },
+    {
+      "id": 49,
+      "title": "Efesios",
+      "abbr": "Efes.",
+      "tone": "2",
+      "chapters": 6
+    },
+    {
+      "id": 50,
+      "title": "Filipenses",
+      "abbr": "Filip.",
+      "tone": "2",
+      "chapters": 4
+    },
+    {
+      "id": 51,
+      "title": "Colosenses",
+      "abbr": "Col.",
+      "tone": "2",
+      "chapters": 4
+    },
+    {
+      "id": 52,
+      "title": "1 Tesalonicenses",
+      "abbr": "1 Tes.",
+      "tone": "2",
+      "chapters": 5
+    },
+    {
+      "id": 53,
+      "title": "2 Tesalonicenses",
+      "abbr": "2 Tes",
+      "tone": "2",
+      "chapters": 3
+    },
+    {
+      "id": 54,
+      "title": "1 Timoteo",
+      "abbr": "1 Tim.",
+      "tone": "2",
+      "chapters": 6
+    },
+    {
+      "id": 55,
+      "title": "2 Timoteo",
+      "abbr": "2 Tim.",
+      "tone": "2",
+      "chapters": 4
+    },
+    {
+      "id": 56,
+      "title": "Tito",
+      "abbr": "Tito",
+      "tone": "2",
+      "chapters": 3
+    },
+    {
+      "id": 57,
+      "title": "Filemón",
+      "abbr": "Filem.",
+      "tone": "2",
+      "chapters": 1
+    },
+    {
+      "id": 58,
+      "title": "Hebreos",
+      "abbr": "Heb.",
+      "tone": "2",
+      "chapters": 13
+    },
+    {
+      "id": 59,
+      "title": "Santiago",
+      "abbr": "Sant.",
+      "tone": "2",
+      "chapters": 5
+    },
+    {
+      "id": 60,
+      "title": "1 Pedro",
+      "abbr": "1 Ped.",
+      "tone": "2",
+      "chapters": 5
+    },
+    {
+      "id": 61,
+      "title": "2 Pedro",
+      "abbr": "2 Ped.",
+      "tone": "2",
+      "chapters": 3
+    },
+    {
+      "id": 62,
+      "title": "1 Juan",
+      "abbr": "1 Juan",
+      "tone": "2",
+      "chapters": 5
+    },
+    {
+      "id": 63,
+      "title": "2 Juan",
+      "abbr": "2 Juan",
+      "tone": "2",
+      "chapters": 1
+    },
+    {
+      "id": 64,
+      "title": "3 Juan",
+      "abbr": "3 Juan",
+      "tone": "2",
+      "chapters": 1
+    },
+    {
+      "id": 65,
+      "title": "Judas",
+      "abbr": "Jud.",
+      "tone": "2",
+      "chapters": 1
+    },
+    {
+      "id": 66,
+      "title": "Apocalipsis",
+      "abbr": "Apoc.",
+      "tone": "4",
+      "chapters": 22
+    }
+  ]

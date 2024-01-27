@@ -1,0 +1,24 @@
+[
+    {
+        "_id": 1702130870046,
+        "title": "Titulo bm",
+        "description": "Descripción del BM",
+        "text":
+        {
+            "book": 2,
+            "chapter": 1,
+            "verse": 2
+        }
+    },
+    {   
+        "_id": 1702130870296,
+        "title": "Otro titulo bm",
+        "description": "Nueva descripcion BM",
+        "text":
+        {
+            "book": 1,
+            "chapter": 1,
+            "verse": 1
+        }
+    }
+]

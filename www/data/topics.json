@@ -1,0 +1,224 @@
+[
+    {
+        "topic": "Adoración de antepasados",
+        "subTopics":
+        [
+            {
+                "title": "Adoración de antepasados, o antecesores, es en vano",
+                "points":
+                [
+                    {
+                        "description": "Antepasados están muertos, inconscientes.",
+                        "texts": 
+                        [
+                            {
+                                "book": 21,
+                                "chapter": 9,
+                                "verses": 5,
+                                "type": 1
+                            },
+                            {
+                                "book": 21,
+                                "chapter": 9,
+                                "verses": 10,
+                                "type": 2
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Antepasados originales no son dignos de adoración.",
+                        "texts": 
+                        [
+                            {
+                                "book": 45,
+                                "chapter": 5,
+                                "verses": 12,
+                                "type": 1
+                            },
+                            {
+                                "book": 45,
+                                "chapter": 5,
+                                "verses": 14,
+                                "type": 2
+                            },
+                            {
+                                "book": 54,
+                                "chapter": 2,
+                                "verses": 14,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Dios prohibe tal adoración.",
+                        "texts": 
+                        [
+                            {
+                                "book": 2,
+                                "chapter": 34,
+                                "verses": 14,
+                                "type": 0
+                            },
+                            {
+                                "book": 40,
+                                "chapter": 4,
+                                "verses": 10,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "A los hombres se les puede honrar, pero solo a Dios adorar",
+                "points": 
+                [
+                    {
+                        "description": "Jóvenes deben honrar a mayores.",
+                        "texts":
+                        [
+                            {
+                                "book": 54,
+                                "chapter": 5,
+                                "verses": "1-2",
+                                "type": 1
+                            },
+                            {
+                                "book": 54,
+                                "chapter": 5,
+                                "verses": 17,
+                                "type": 2
+                            },
+                            {
+                                "book": 49,
+                                "chapter": 6,
+                                "verses": "1-3",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Solo Dios debe ser adorado.",
+                        "texts":
+                        [
+                            {
+                                "book": 44,
+                                "chapter": 10,
+                                "verses": "25-26",
+                                "type": 0
+                            },
+                            {
+                                "book": 66,
+                                "chapter": 22,
+                                "verses": "8-9",
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "topic": "Adoración de María",
+        "subTopics":
+        [
+            {
+                "title": "María madre de Jesús, no \"madre de Dios\"",
+                "points":
+                [
+                    {
+                        "description": "Dios no tuvo principio.",
+                        "texts":
+                        [
+                            {
+                                "book": 19,
+                                "chapter": 90,
+                                "verses": 2,
+                                "type": 0
+                            },
+                            {
+                                "book": 54,
+                                "chapter": 1,
+                                "verses": 17,
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "María fue madre del Hijo de Dios, en condición terrestre.",
+                        "texts":
+                        [
+                            {
+                                "book": 42,
+                                "chapter": 1,
+                                "verses": 35,
+                                "type": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "María no fue \"siempre virgen\"",
+                "points":
+                [
+                    {
+                        "description": "Se casó con José.",
+                        "texts":
+                        [
+                            {
+                                "book": 40,
+                                "chapter": 1,
+                                "verses": "19-20",
+                                "type": 1
+                            },
+                            {
+                                "book": 40,
+                                "chapter": 1,
+                                "verses": "24-25",
+                                "type": 2
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tuvo otros hijos además de Jesús.",
+                        "texts":
+                        [
+                            {
+                                "book": 40,
+                                "chapter": 13,
+                                "verses": "55-56",
+                                "type": 0
+                            },
+                            {
+                                "book": 42,
+                                "chapter": 8,
+                                "verses": "19-21",
+                                "type": 0
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Éstos no eran entonces \"hermanos espirituales\" de Jesús.",
+                        "texts":
+                        [
+                            {
+                                "book": 43,
+                                "chapter": 7,
+                                "verses": 3,
+                                "type": 1
+                            },
+                            {
+                                "book": 43,
+                                "chapter": 7,
+                                "verses": 5,
+                                "type": 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

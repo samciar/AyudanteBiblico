@@ -1,0 +1,32 @@
+{
+  "cwd": "D:\\Sam\\proyectos\\cordova\\AyudanteBiblico_NM",
+  "type": [
+    "cordova"
+  ],
+  "name": "Ayudante Biblico",
+  "framework": "core",
+  "template": "tabs",
+  "bundler": false,
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkMode": true,
+    "iconFonts": true
+  },
+  "customBuild": false,
+  "pkg": "com.esmeralab.ayudanteBiblico",
+  "cordova": {
+    "folder": "cordova",
+    "platforms": [
+      "android"
+    ],
+    "plugins": [
+      "cordova-plugin-statusbar",
+      "cordova-plugin-keyboard",
+      "cordova-plugin-splashscreen",
+      "cordova-plugin-device",
+      "cordova-plugin-file"
+    ]
+  }
+}
