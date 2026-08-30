@@ -39,7 +39,7 @@ const APP_METHODS = {
 
 }
 
-const BIBLE = {
+let BIBLE = {
     async loadSection(section) {
 
         let path = "";
@@ -190,10 +190,14 @@ const BIBLE = {
     },
     scrollToVerse(chapter, verse, cleanOldHighLights = true) { //BIBLE.scrollToVerse(1, 10); OR BIBLE.scrollToVerse(1, [1,2,3]);
 
+        console.log(chapter, verse, cleanOldHighLights);
+
         if (cleanOldHighLights) {
             //clean old highlight verses
             $(".file-content-view .highlighted-verse").removeClass("highlighted-verse");
         }
+
+        console.log(typeof verse);
 
         //validate if verse is complex
         if (typeof verse === "string") {
@@ -246,8 +250,14 @@ const BIBLE = {
 
             $(parentPar).html($(parentPar).html().replace(verseText, highlight));
 
-            //Now read next paragraphs if has class sz
+            console.log(parentPar);
+
+            console.log(parentPar.getElementsByTagName('span').length);
+
+            //Now read next paragraphs if has class sz, sb or sl
             let pNext = parentPar.nextElementSibling;
+
+            console.log(pNext);
 
             if(pNext != null){
                 let pOk = true;
@@ -267,6 +277,8 @@ const BIBLE = {
 
                         spanTag = pNext.getElementsByTagName('span');
 
+                        console.log(spanTag.length);
+
                         if(spanTag.length == 0){ //Exists span tag then exit while and NO highlight text verse
                             verseText = pNext.textContent.trim();
                             highlight = '<span class="highlighted-verse">' + verseText + '</span>';
@@ -282,6 +294,9 @@ const BIBLE = {
                     if(pNext == null){
                         pOk = false;
                     }
+
+                    console.log(pNext);
+                    console.log(pOk);
                 }
             }
         }

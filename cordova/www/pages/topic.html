@@ -70,6 +70,11 @@
           groupVerseText = textDeep.verses;
         }
 
+        if(textDeep.type === -1){
+          htmlTextsGroup += `<a href="#" data-verse='{"book": ${textDeep.book}, "chapter": ${textDeep.chapter}, "verse": ${textDeep.verses}}'>
+                              ${textDeep.chapter}:${groupVerseText}</a>;${" "}`;
+        }
+
         if(textDeep.type === 0){
           htmlTextsGroup += `<a href="#" data-verse='{"book": ${textDeep.book}, "chapter": ${textDeep.chapter}, "verse": ${textDeep.verses}}'>
                               ${store.getters.books.value[(textDeep.book - 1)].abbr} ${textDeep.chapter}:${groupVerseText}</a>;${" "}`;
