@@ -1,45 +1,6 @@
 const S_HOST = window.document.location.origin;
 
-const APP_METHODS = {
-    onBackKeyDown() {
-
-        var leftp = app.panel.get(".panel-left") && app.panel.get(".panel-left").opened;
-        var rightp = app.panel.get(".panel-right") && app.panel.get(".panel-right").opened;
-
-        if (leftp || rightp) {
-
-            app.panel.close();
-            return false;
-        } else if ($('.modal-in').length > 0) {
-
-            app.dialog.close();
-            app.popup.close();
-            return false;
-        } else if (app.views.current.router.url == '/home/') {
-
-            navigator.app.exitApp();
-        } else {
-            app.tab.show("#view-home", true);
-        }
-
-    },
-    applyAppConfigInterface(){
-        if(store.state.config.theme.value == "dark"){
-            $("#view-settings .config-darkmode").prop("checked", true);
-            app.setDarkMode(true);
-        }else{
-            $("#view-settings .config-darkmode").prop("checked", false);
-            app.setDarkMode(false);
-        }
-
-        $(".file-content-view").css("font-size", store.state.config.fontSize.value+"px");
-        $("#view-topics").css("font-size", store.state.config.fontSize.value+"px");
-        app.range.setValue("#view-settings .range-slider", store.state.config.fontSize.value);
-    }
-
-}
-
-let BIBLE = {
+const BIBLE = {
     async loadSection(section) {
 
         let path = "";
@@ -152,7 +113,7 @@ let BIBLE = {
         $(".chapters-box .grid").html(htmlChapters);
     },
     getBookInfo(bookId) {
-        return store.getters.books.value[(bookId - 1)];
+        return store.getters.books.value[(bookId-1)];
     },
     async showChapter(bookId, chapter, source) {
 
@@ -190,14 +151,10 @@ let BIBLE = {
     },
     scrollToVerse(chapter, verse, cleanOldHighLights = true) { //BIBLE.scrollToVerse(1, 10); OR BIBLE.scrollToVerse(1, [1,2,3]);
 
-        console.log(chapter, verse, cleanOldHighLights);
-
         if (cleanOldHighLights) {
             //clean old highlight verses
             $(".file-content-view .highlighted-verse").removeClass("highlighted-verse");
         }
-
-        console.log(typeof verse);
 
         //validate if verse is complex
         if (typeof verse === "string") {
@@ -248,57 +205,23 @@ let BIBLE = {
             let verseText = parentPar.childNodes[(nodeIndexVerse + 2)].textContent.trim();
             let highlight = '<span class="highlighted-verse">' + verseText + '</span>';
 
+
             $(parentPar).html($(parentPar).html().replace(verseText, highlight));
 
-            console.log(parentPar);
 
-            console.log(parentPar.getElementsByTagName('span').length);
-
-            //Now read next paragraphs if has class sz, sb or sl
+            //Now read next paragraphs if has class sz
             let pNext = parentPar.nextElementSibling;
 
-            console.log(pNext);
+            while (pNext.classList.contains("sz")) {
 
-            if(pNext != null){
-                let pOk = true;
-                let spanTag = null;
+                //if contains sz class, let's highlight text verse
+                verseText = pNext.textContent.trim();
+                highlight = '<span class="highlighted-verse">' + verseText + '</span>';
+                $(pNext).html($(pNext).html().replace(verseText, highlight));
 
-                while (pOk) {
-
-                    if(pNext.classList.contains("sz")){
-                        //if contains sz class, let's highlight text verse
-                        verseText = pNext.textContent.trim();
-                        highlight = '<span class="highlighted-verse">' + verseText + '</span>';
-                        $(pNext).html($(pNext).html().replace(verseText, highlight));
-        
-                        pNext = pNext.nextElementSibling;
-                        
-                    }else if(pNext.classList.contains("sb") || pNext.classList.contains("sl")){
-
-                        spanTag = pNext.getElementsByTagName('span');
-
-                        console.log(spanTag.length);
-
-                        if(spanTag.length == 0){ //Exists span tag then exit while and NO highlight text verse
-                            verseText = pNext.textContent.trim();
-                            highlight = '<span class="highlighted-verse">' + verseText + '</span>';
-                            $(pNext).html($(pNext).html().replace(verseText, highlight));
-
-                            pNext = pNext.nextElementSibling;
-
-                        }else{
-                            pOk = false;
-                        }
-                    }
-
-                    if(pNext == null){
-                        pOk = false;
-                    }
-
-                    console.log(pNext);
-                    console.log(pOk);
-                }
+                pNext = pNext.nextElementSibling;
             }
+
         }
     },
     async showVerseInBible(jsonText) {
@@ -343,26 +266,26 @@ const TOPICS = {
 }
 
 const BOOKMARKS = {
-    // async loadBookmarks() { // DESUSO
-    //     WEB_SOURCES.loadFile(`${S_HOST}/data/bookmarks.json`, "json").then((bookmarksList) => {
+    async loadBookmarks(){
+        WEB_SOURCES.loadFile(`${S_HOST}/data/bookmarks.json`, "json").then((bookmarksList) => {
 
-    //         app.store.dispatch('loadBookmarks', bookmarksList).then(() => {
-    //             console.log('Bookmarks added to store');
+            app.store.dispatch('loadBookmarks', bookmarksList).then(() => {
+                console.log('Bookmarks added to store');
 
-    //             //show bookmarks list
-    //             BOOKMARKS.showBookmarksList();
+                //show bookmarks list
+                BOOKMARKS.showBookmarksList();
 
-    //         });
+            });
 
-    //     });
-    // },
-    showBookmarksList() {
+        });
+    },
+    showBookmarksList(){
 
         let bookmarks = store.getters.bookmarks.value;
         let htmlBookmarks = "";
-        if (bookmarks.length > 0) {
+        if(bookmarks.length > 0){
 
-            bookmarks.map((bookmark, index) => {
+            bookmarks.map((bookmark, index)=>{
                 htmlBookmarks += `  <li class="swipeout" data-bmid="${bookmark._id}">
                                         <div class="swipeout-content">
                                             <a class="item-link item-content" data-text='{"book": ${bookmark.text.book}, "chapter": ${bookmark.text.chapter}, "verse": ${bookmark.text.verse}}'>
@@ -389,13 +312,13 @@ const BOOKMARKS = {
             });
 
             $(".text-no-bookmarks").hide();
-        } else {
+        }else{
             $(".text-no-bookmarks").show();
         }
 
         $(".bookmarks-box").html(htmlBookmarks);
 
-        if (store.state.MBsearchBar === false) {
+        if(store.state.MBsearchBar === false){
             //Init searchBar
             store.state.MBsearchBar = app.searchbar.create({
                 el: ".bookmark-search",
@@ -406,7 +329,7 @@ const BOOKMARKS = {
         }
 
     },
-    showFormNewBookmark(bookId, chapter, verse) {
+    showFormNewBookmark(bookId, chapter, verse){
         console.log(bookId, chapter, verse);
 
         let bookInfo = BIBLE.getBookInfo(bookId);
@@ -417,7 +340,7 @@ const BOOKMARKS = {
 
         app.popup.open("#pp-form-bookmark");
     },
-    saveBookmark() {
+    saveBookmark(){
         //Get values
         let bmTitle = $('#form-bookmark [name="bm-title"]');
         let bmDescription = $('#form-bookmark [name="bm-description"]');
@@ -425,13 +348,10 @@ const BOOKMARKS = {
         let timestampId = Date.now();
 
         //validate input
-        if (app.input.validate(bmDescription)) {
+        if(app.input.validate(bmDescription)){
 
             //save new bookmark in store
-            app.store.dispatch('addBookmark', { "_id": timestampId, "title": bmTitle.val(), "description": bmDescription.val(), "text": JSON.parse(bmVerse.val()) });
-
-            //Update bookmarks file
-            LOCAL_SOURCES.updateBookmarksFile(null, 1);
+            app.store.dispatch('addBookmark', {"_id": timestampId, "title": bmTitle.val(), "description": bmDescription.val(), "text": JSON.parse(bmVerse.val())});
 
             //clear inputs
             bmTitle.val('');
@@ -445,23 +365,21 @@ const BOOKMARKS = {
             BOOKMARKS.showBookmarksList();
         }
     },
-    deleteBookmark(bmId) {
+    deleteBookmark(bmId){
 
-
+        
         let bookmarks = store.getters.bookmarks.value;
         let bookmarkLength = bookmarks.length;
 
         bookmarks.forEach((bookmark, index) => {
-
-            if (bookmark._id == bmId) {
+            
+            if(bookmark._id == bmId){
                 app.store.dispatch('deleteBookmark', index);
-
-                //Update bookmarks file
-                LOCAL_SOURCES.updateBookmarksFile(null, 1);
+                //store.getters.bookmarks.value[index];
             }
         });
 
-        if (bookmarkLength == 1) { //Already deleted
+        if(bookmarkLength == 1){ //Already deleted
 
             //refresh bookmark list
             BOOKMARKS.showBookmarksList();
@@ -560,283 +478,16 @@ const WEB_SOURCES = {
         }
 
         return contentFile;
-    },
-    loadDailyText(){
-        // WARNING: For GET requests, body is set to null by browsers.
-        let data = "";
-
-        let xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function() {
-        if(this.readyState === 4) {
-            console.log(this.responseText);
-        }
-        });
-
-        xhr.open("GET", "https://wol.jw.org/es/wol/h/r4/lp-s/2024/1/20");
-
-        xhr.send(data);
     }
 
 }
 
-var LOCAL_SOURCES = { //change to cons after developing complete
+const LOCAL_SOURCES = {
 
-    checkInitConfigFiles() {
+    async checkDataStorage(){
 
-        //Init FileSystem
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccessFS, onErrorFS);
+        
 
-        function onSuccessFS(fs) {
-
-            fs.root.getDirectory("appData", { create: true, exclusive: true },
-                function () {
-                    console.log("appData Created");
-
-                    //creating config file
-                    createConfigFile(fs);
-
-                    //creating bookmarks file
-                    createBookMarksFile(fs);
-
-                }, function () {
-                    console.log("appData already exists");
-
-                    //check if config file was create
-                    createConfigFile(fs);
-
-                    //check if bookmark file was create
-                    createBookMarksFile(fs);
-
-                });
-
-        }
-
-        function createConfigFile(fs) {
-
-            fs.root.getFile('appData/config_ini.sam', { create: true, exclusive: true },
-                function () {
-
-                    console.log('Config file created');
-
-                    //Writing Config file
-                    LOCAL_SOURCES.updateConfigFile(fs, 0);
-
-                },
-                function () {
-                    console.log('Config file already exists');
-
-                    //lets read config file
-                    LOCAL_SOURCES.loadConfigFile();
-                });
-
-        }
-
-        function createBookMarksFile(fs){
-            fs.root.getFile('appData/bookmarks.sam', { create: true, exclusive: true },
-                function () {
-
-                    console.log('Bookmarks file created');
-
-                    //Writing Config file
-                    LOCAL_SOURCES.updateBookmarksFile(fs, 0);
-
-                },
-                function () {
-                    console.log('Bookmarks file already exists');
-
-                    //lets read config file
-                    LOCAL_SOURCES.loadBookmarksFile();
-                });
-
-        }
-
-        function onErrorFS(err) {
-            console.log(err);
-        }
-    },
-    loadConfigFile(chargeConfig = true) {
-
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function onFileSystemSuccess(fileSystem) {
-
-            var configFilePath = fileSystem.root.toURL() + "appData/config_ini.sam";
-
-            window.resolveLocalFileSystemURL(configFilePath, function (fileEntry) {
-
-                fileEntry.file(function (file) {
-                    var reader = new FileReader();
-
-                    reader.onloadend = function (e) {
-
-                        data = "" + this.result;
-
-                        if (chargeConfig) {
-                            store.state.config = JSON.parse(data);
-
-                            //Set controls form in page settings
-                            APP_METHODS.applyAppConfigInterface();                            
-                        }
-                    }
-
-                    reader.readAsText(file);
-                });
-
-            }, function (err) {
-                console.log(err);
-            });
-
-        });
-
-    },
-    updateConfigFile(fs, data) {
-
-        if (fs == null) {
-
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-
-                writeConfigFile(fs, data);
-
-            }, function (err) {
-                console.log(err);
-            });
-
-        } else {
-            writeConfigFile(fs, data);
-        }
-
-        function writeConfigFile(fs, data) { // 0 = configTemplate, 1 = config, another value = string to save
-
-            let stringData = '';
-
-            if (data == 0) {
-                stringData = JSON.stringify(store.state.configTemplate);
-            } else if (data == 1) {
-                stringData = JSON.stringify(store.state.config);
-            } else {
-                stringData = data.toString();
-            }
-
-            fs.root.getFile("appData/config_ini.sam", { create: true, exclusive: false }, function (fileEntry) {
-
-                fileEntry.createWriter(function (writer) {
-                    //start writing
-                    writer.write(stringData);
-
-                    //console.log(stringData);
-                    //load Config file
-                    LOCAL_SOURCES.loadConfigFile();
-
-                }, function () {
-                    console.log('Error writing config file');
-                });
-
-            }, function () {
-                console.log('Error acceding to config file');
-            });
-
-        }
-
-    },
-    loadBookmarksFile(chargeBookmarks = true) {
-
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function onFileSystemSuccess(fileSystem) {
-
-            var configFilePath = fileSystem.root.toURL() + "appData/bookmarks.sam";
-
-            window.resolveLocalFileSystemURL(configFilePath, function (fileEntry) {
-
-                fileEntry.file(function (file) {
-                    var reader = new FileReader();
-
-                    reader.onloadend = function (e) {
-
-                        data = "" + this.result;
-
-                        if (chargeBookmarks) {
-                            app.store.dispatch('loadBookmarks', JSON.parse(data)).then(() => {
-                                
-                                //console.log('Bookmarks added to store');
-                                //show bookmarks list
-                                BOOKMARKS.showBookmarksList();
-                
-                            });
-                        }
-                    }
-
-                    reader.readAsText(file);
-                });
-
-            }, function (err) {
-                console.log(err);
-            });
-
-        });
-
-    },
-    updateBookmarksFile(fs, data) {
-
-        if (fs == null) {
-
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-
-                writeBookmarksFile(fs, data);
-
-            }, function (err) {
-                console.log(err);
-            });
-
-        } else {
-            writeBookmarksFile(fs, data);
-        }
-
-        function writeBookmarksFile(fs, data) { // 0 = {}, another value = string to save
-
-            let stringData = '';
-
-            if (data == 0) {
-                stringData = '[]';
-            } else if(data == 1){
-                stringData = JSON.stringify(store.state.bookmarks);
-            } else {
-                stringData = data.toString();
-            }
-
-            fs.root.getFile("appData/bookmarks.sam", { create: true, exclusive: false }, function (fileEntry) {
-
-                fileEntry.createWriter(function (writer) {
-                    //start writing
-                    writer.write(stringData);
-
-                    //load Config file
-                    LOCAL_SOURCES.loadConfigFile();
-
-                }, function () {
-                    console.log('Error writing bookmarks file');
-                });
-
-            }, function () {
-                console.log('Error acceding to bookmarks file');
-            });
-
-        }
-
-    },
-    listDir(path) {
-        window.resolveLocalFileSystemURL(path,
-            function (fileSystem) {
-                var reader = fileSystem.createReader();
-                reader.readEntries(
-                    function (entries) {
-                        console.log(entries);
-                    },
-                    function (err) {
-                        console.log(err);
-                    }
-                );
-            }, function (err) {
-                console.log(err);
-            }
-        );
     }
+
 }

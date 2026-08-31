@@ -7,13 +7,14 @@ const store = createStore({
     topics: [], //Dinamic load from file
     bookmarks: [], //Dinamic load from file
     MBsearchBar: false,
-    config:{},
-    configTemplate:
+    config:
     {
       "theme":{
-        "value": 'dark' //dark - light
+        "title": "theme",
+        "value": 0
       },
       "fontSize":{
+        "title": "fontSize",
         "value": 16
       }
     }
@@ -49,7 +50,7 @@ const store = createStore({
       state.bookmarks.splice(indexBm, 1);
     },
     updateConfig({ state }, configValue){
-      //console.log(configValue[0], configValue[1]);
+      console.log(configValue[0], configValue[1]);
       state.config[configValue[0]].value = configValue[1];
     }
   },

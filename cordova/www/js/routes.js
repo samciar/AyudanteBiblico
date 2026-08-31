@@ -1,16 +1,25 @@
 
 var routes = [
   {
-    path: '/home',
-    url: '/home/'
+    path: '/',
+    url: './index.html',
+    options: {
+      transition: 'f7-push',
+    }
   },
   {
     path: '/topics/',
-    componentUrl: './pages/topics.html'
+    componentUrl: './pages/topics.html',
+    options: {
+      transition: 'f7-push',
+    }
   },
   {
     path: '/settings/',
-    componentUrl: './pages/settings.html'
+    componentUrl: './pages/settings.html',
+    options: {
+      transition: 'f7-push',
+    }
   },
   {
     path: '/panel-chapters/',

@@ -65,10 +65,6 @@
     margin-top: 10px;
 }
 
-.file-content-view p {
-    margin: 0;
-}
-
 .file-content-view>p:first-child .w_ch strong{
     color: #0096c1;
     display: inline-block;
@@ -138,31 +134,4 @@
 
 html:not(.dark) .highlighted-verse{
     color: #3078c5
-}
-
-.img-book-reading{
-    background-image: url(../img/book_reading.jpg);
-    position: relative;
-    width: 70%;
-    height: 230px;
-    margin: 120px auto 0 auto;
-    background-size: 100% auto;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.jw-ext-link{
-    cursor: pointer;
-}
-
-.jw-ext-link img{
-    width: 100%;
-    height: auto;
-}
-
-.jw-ext-link p{
-    font-size: 0.7rem;
-    margin-top: 0;
 }

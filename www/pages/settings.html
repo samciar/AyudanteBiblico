@@ -72,6 +72,10 @@
         $store.dispatch('updateConfig', ["fontSize", fontSize]).then(()=>{          
           $(".file-content-view").css("font-size", fontSize+"px");
           $("#view-topics").css("font-size", fontSize+"px");
+
+          //update config file
+          LOCAL_SOURCES.updateConfigFile(null, 1);
+
         });
 
     });
@@ -81,6 +85,14 @@
       let newValue = $(this).prop("checked");
 
       app.setDarkMode(newValue);
+
+      let value = (newValue) ? 'dark' : 'light';
+
+      $store.dispatch('updateConfig', ["theme", value]).then(()=>{          
+          
+          //update config file
+          LOCAL_SOURCES.updateConfigFile(null, 1);
+        });
 
     });
 

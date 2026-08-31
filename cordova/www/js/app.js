@@ -1,46 +1,36 @@
 var $ = Dom7;
 
+
 var app = new Framework7({
   name: 'Bible Partner', // App name
   theme: 'md', // auto for Automatic theme detection
   darkMode: true,
   el: '#app', // App root element
+
   // Enable swipe panel
   panel: {
     swipe: true,
     swipeOnlyClose: true,
   },
-  view:{
-    pushState:true,
-  },
+
   // App store
   store: store,
 
   // App routes
   routes: routes,
 
-  // popup params
-  popup: {
-    closeByBackdropClick: false,
-  },
   on: {
     init: function () {
       console.log('App initialized');
 
-      //LoadUserConfig
-      LOCAL_SOURCES.checkInitConfigFiles();
-
-      //Loading Books
+      //Load Books
       BIBLE.loadBooks();
 
-      //Loading Topics
+      //Load Topics
       TOPICS.loadTopics();
 
-      //Loading bookmarks
-      //BOOKMARKS.loadBookmarks();
-
-      //Registering event listener to backbutton
-      document.addEventListener("backbutton", APP_METHODS.onBackKeyDown, false);
+      //Load bookmarks
+      BOOKMARKS.loadBookmarks();
 
     },
     pageInit: function () {
@@ -61,19 +51,9 @@ $('#my-login-screen .login-button').on('click', function () {
   app.dialog.alert('Username: ' + username + '<br/>Password: ' + password);
 });
 
-//WELCOME PAGE
-
-$("#view-home").on("click", ".jw-ext-link", function(e){
-
-  let extLink = $(this).data("link");
-
-  console.log(extLink);
-
-});
-
 //BIBLE
 
-$(".panel-bible").on("click", ".btn-book", function (e) {
+$(".panel-bible").on("click", ".btn-book", function(e){
 
   let bookId = parseInt($(this).data('id'));
 
@@ -82,7 +62,7 @@ $(".panel-bible").on("click", ".btn-book", function (e) {
 
 });
 
-$(".panel-bible").on("click", ".chapters-box .btn-chapter", function (e) {
+$(".panel-bible").on("click", ".chapters-box .btn-chapter", function(e){
 
   let bookId = $(this).data('book');
   let source = $(this).data('source');
@@ -93,7 +73,7 @@ $(".panel-bible").on("click", ".chapters-box .btn-chapter", function (e) {
 
 });
 
-$(".panel-bible").on("click", ".btn-bible-sections", function (e) {
+$(".panel-bible").on("click", ".btn-bible-sections", function(e){
 
   let section = $(this).data("section");
 
@@ -102,7 +82,7 @@ $(".panel-bible").on("click", ".btn-bible-sections", function (e) {
 
 //TOPICS
 
-$("#view-topics").on("click", ".sub-topic-texts a", async function (e) {
+$("#view-topics").on("click", ".sub-topic-texts a", async function(e){
 
   let jsonText = JSON.parse($(this).data("verse"));
 
@@ -112,7 +92,7 @@ $("#view-topics").on("click", ".sub-topic-texts a", async function (e) {
 
 //BOOKMARKS
 
-$("#view-bible").on("click", ".file-content-view .verse-link", function (e) {
+$("#view-bible").on("click", ".file-content-view .verse-link", function(e){
 
   let verse = $(this).text();
   let book = $(".title.title-view-center-main").data("book");
@@ -121,13 +101,13 @@ $("#view-bible").on("click", ".file-content-view .verse-link", function (e) {
   BOOKMARKS.showFormNewBookmark(book, chapter, verse);
 });
 
-$("#pp-form-bookmark").on("click", ".btn-save-bookmark", function (e) {
+$("#pp-form-bookmark").on("click", ".btn-save-bookmark", function(e){
 
   BOOKMARKS.saveBookmark();
 
 });
 
-$(".bookmarks-box").on("click", ".item-link", function (e) {
+$(".bookmarks-box").on("click", ".item-link", function(e){
 
   let jsonText = JSON.parse($(this).data('text'));
 
@@ -137,7 +117,7 @@ $(".bookmarks-box").on("click", ".item-link", function (e) {
   BIBLE.showVerseInBible(jsonText);
 });
 
-$(".bookmarks-box").on("swipeout:deleted", ".swipeout", function (e) {
+$(".bookmarks-box").on("swipeout:deleted", ".swipeout", function(e){
 
   BOOKMARKS.deleteBookmark($(this).data("bmId"));
 
